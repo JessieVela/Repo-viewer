@@ -1,38 +1,93 @@
-.App {
+body {
+  background-color: #f8f9fa;
+  font-family: 'Vollkorn', serif;
+}
+
+.App-Name {
+  padding: 10px;
+  text-align: center;
+  background-color: ivory;
+}
+
+.add-repo {
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 2px;
+  height: 1.8rem;
+}
+
+.add-repo:focus-within {
+  border-color: #9ecaed;
+  box-shadow: 0 0 2px #9ecaed;
+}
+
+.add-repo input {
+  flex-grow: 2;
+  border: none;
+}
+
+#submit-repo {
+  color: white;
+  font-weight: 800;
+  border-radius: 2px;
+  background-color: #007bff;
+  max-width: 25%;
+}
+
+.add-repo input:focus {
+  outline: none;
+}
+
+.repo-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  border-right: 2px solid lightgray;
+}
+
+.edit-select {
+  margin: 5px 0 !important;
+  width: 75% !important;
+}
+
+.edit {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px 1rem;
+}
+
+.edit button {
+  font-size: 1rem;
+  width: 80px;
+  height: 25px;
+}
+
+.no-repo {
+  margin: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@media only screen and (min-width: 768px) {
+  .column-sm {
+    width: 45%;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .edit {
+    margin: 5px 2rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media only screen and (min-width: 1024px) {
+  .edit {
+    margin: 5px 2rem;
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* Reset CSS Tags */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  margin: 0;
 }

@@ -1,0 +1,21 @@
+.release-notes {
+  width: 100%;
+}
+
+.release-notes h2 {
+  text-align: center;
+}
+
+.release-notes p {
+  line-height: 2rem;
+  word-wrap: break-word;
+}
+
+@media only screen and (min-width: 768px) {
+  .release-notes {
+    width: 45%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+  }
+}
