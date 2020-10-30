@@ -32,10 +32,16 @@ class App extends Component {
     }
   }
 
+  //Sets the URL based on what the user is inputted.
   handleChange = (event) => {
     this.setState({ url: event.target.value });
   };
 
+  /**
+   * Opens the release notes for the clicked repo. Will search if another repo is opened and set it to close. Opening and
+   * closing is based on the state.
+   * @param repo
+   */
   openReleaseNotes = (repo) => {
     const openIndex = this.state.repoList.findIndex(
       (element) => element.repo === repo
@@ -64,6 +70,11 @@ class App extends Component {
     });
   };
 
+  /**
+   * When a user clicks submit the event object is passed here and the function is invoked. The function will determine if the
+   * passed url is valid by using helper functions in Util.ts; if conditions passed then repo information is pulled from Github API.
+   * @param event - The event object from clicking submit
+   */
   addRepo = async (event) => {
     event.preventDefault();
     document.getElementById("form-list").reset();
@@ -77,7 +88,10 @@ class App extends Component {
       this.state.repoList === undefined
         ? null
         : this.state.repoList.findIndex((element) => element.repo === repo);
-    if (foundRepo !== -1 || foundRepo === null)
+    if (
+      (foundRepo !== -1 || foundRepo === null) &&
+      this.state.repoList !== undefined
+    )
       return alert("Already tracking this repo");
 
     let repoData = await fetchRepoRelease(org, repo);
