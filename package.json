@@ -15,7 +15,11 @@
   },
   "scripts": {
     "start": "node server.js",
+<<<<<<< HEAD
     "prod": "react-scripts start",
+=======
+    "dev": "react-scripts start",
+>>>>>>> e8117ba83ce7885053b9097f6b68778662e4eab5
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
