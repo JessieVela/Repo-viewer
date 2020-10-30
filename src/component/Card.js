@@ -1,14 +1,17 @@
 import React from "react";
 import ReleaseNotes from "./ReleaseNotes";
 import "../styles/Card.css";
-
+/**
+ * Stateless component that renders repo information.
+ * @param props - Contains repo information
+ */
 const Card = (props) => {
   var createdDate, repoNotes;
 
   if (props.data[0].published_at !== undefined) {
     createdDate = props.data[0].published_at.substring(
       0,
-      props.data[0].published_at.indexOf("T")
+      props.data[0].published_at.indexOf("T") // at location 'T' relevant repo information begins.
     );
     repoNotes = props.data[0].body;
   } else {

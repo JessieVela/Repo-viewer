@@ -10,6 +10,10 @@ interface State {
   repoList: Repo[];
 }
 
+/**
+ * Checks if the URL is a valid URL. It must contain 'https://github.com/' to be valid.
+ * @param url
+ */
 export const parseUrl = (url: string) => {
   let org, repo, newUrl;
   if (url.includes("https://github.com/")) {
@@ -22,6 +26,11 @@ export const parseUrl = (url: string) => {
   }
 };
 
+/**
+ * Async function that retrieves the release information for a specific repo.
+ * @param org
+ * @param repo
+ */
 export const fetchRepoRelease = async (org: string, repo: Repo) => {
   let response;
 
@@ -37,6 +46,11 @@ export const fetchRepoRelease = async (org: string, repo: Repo) => {
   }
 };
 
+/**
+ * Repos that don't have a release version we retrieve the last commit date for that repo
+ * @param org
+ * @param repo
+ */
 export const fetchRepoCommit = async (org: string, repo: Repo) => {
   let response;
 
@@ -52,6 +66,10 @@ export const fetchRepoCommit = async (org: string, repo: Repo) => {
   }
 };
 
+/**
+ * Save to local storage the repo list.
+ * @param repoList
+ */
 export const saveToLocalStorage = (repoList: State) => {
   localStorage.setItem("RepoTracking", JSON.stringify(repoList));
 };
