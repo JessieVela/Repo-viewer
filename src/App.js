@@ -83,7 +83,7 @@ class App extends Component {
     const [org, repo] = parseUrl(this.state.url);
     if (org === null || repo === null) return null;
 
-    //Check if repo already exists in the list.
+    //Check if repo already exists in the list. If repo is in the list don't add it and alert user.
     const foundRepo =
       this.state.repoList === undefined
         ? null
@@ -128,10 +128,15 @@ class App extends Component {
       });
   };
 
+  //Toggle edit button to delete repos
   editRepoList = () => {
     this.setState({ ...this.state, edit: !this.state.edit });
   };
 
+  /**
+   * Deletes repo from the repo list.
+   * @param repo
+   */
   deleteRepo = (repo) => {
     const closeIndex = this.state.repoList.findIndex(
       (element) => element.repo === repo
@@ -158,7 +163,7 @@ class App extends Component {
             <input
               type="text"
               value={this.state.value}
-              onChange={this.handleChange}
+              onKeyUp={this.handleChange}
               placeholder="Add URL to track repository"
             />
             <input id="submit-repo" type="submit" value="Submit" />
