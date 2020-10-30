@@ -1,11 +1,14 @@
 import React, { Fragment } from "react";
+import ReactMarkdown from "react-markdown";
 import "../styles/ReleaseNotes.css";
 
 const ReleaseNotes = (props) => {
   return (
     <Fragment>
       <h2>Release Notes</h2>
-      <p>{props.notes ? props.notes : "No Release Notes"}</p>
+      <ReactMarkdown>
+        {props.notes ? props.notes : "No Release Notes"}
+      </ReactMarkdown>
     </Fragment>
   );
 };
