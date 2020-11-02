@@ -6,6 +6,8 @@ A tool to keep track of releases made by GitHub repos. Clicking on a repo will o
 
 Visit the live demo for a development preview.
 
+[LIVE DEMO](https://repo-release-viewer.herokuapp.com/)
+
 > Note: This is still in developement so server may be recieving updates or maybe offline.
 
 ## To Run:
