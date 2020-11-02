@@ -98,6 +98,8 @@ class App extends Component {
     if (repoData === null || repoData === undefined || repoData.length === 0) {
       repoData = await fetchRepoCommit(org, repo);
     }
+    if(repoData === null || repoData === undefined || repoData.length === 0)
+      return null;
 
     if (this.state.repoList === undefined) {
       this.setState({

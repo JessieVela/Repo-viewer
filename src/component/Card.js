@@ -29,7 +29,7 @@ const Card = (props) => {
           <button
             className="delete-button"
             onClick={() => {
-              props.deleteRepo(props.repo);
+              props.deleteRepo(props.repo); 
             }}
           >
             Delete
