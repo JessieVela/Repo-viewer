@@ -1,5 +1,5 @@
 # GitHub Repo Viewer
----
+
 A tool to keep track of releases made by GitHub repos. Clicking on a repo will open the release notes. For repos with no release version the last commit date is shown and commit details available for viewing. Simply add a GitHub URL and start tracking.
 
 ## See a Live Demo
